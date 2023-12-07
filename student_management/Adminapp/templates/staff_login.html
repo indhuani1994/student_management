@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login</title>
+</head>
+<body>
+    
+    {% include 'CommonLink.html' %}
+    <div class="main">
+        {% include 'M.html' %}
+    <h1>Staff Login</h1>
+    
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <label for="staff_name">Staff Name:</label>
+        {{ form.staff_name(class="form-control", placeholder="Enter Staff Name", required="required") }}
+        <br>
+        <label for="mobile">Mobile:</label>
+        {{ form.mobile(class="form-control", placeholder="Enter Mobile", required="required") }}
+        <br>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</body>
+</html>

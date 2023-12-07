@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Staff</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    {% include 'M.html' %}
+    <div class="main">
+    <h1>View Staff </h1>
+
+    {% if staff_records %}
+    <table class="table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Mail</th>
+                    <th>Experience</th>
+                    <th>Status</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in staff_records %}
+                    <tr>
+                        <td>{{ record.id }}</td>
+                        <td>{{ record.staff_name }}</td>
+                        <td>{{ record.mobile }}</td>
+                        <td>{{ record.mail }}</td>
+                        <td>{{ record.experience }}</td>
+                        <td>{{ record.staff_status }}</td>
+                        <td><a href="{{ url_for('edit_staff', staff_id=record.id) }}">Edit</a></td>
+                        <td><a href="{{ url_for('delete_staff', staff_id=record.id) }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No staff records found.</p>
+    {% endif %}
+</body>
+</html>

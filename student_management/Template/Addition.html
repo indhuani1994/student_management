@@ -1,0 +1,21 @@
+{% extends 'Master.html' %}
+{% load static %}
+{% block title%}HOME PAGE{% endblock %}
+{% block content%}
+    {% include 'CommonLink.html' %}
+    <h1>Addition page</h1>
+    <form action="Addition" method="post">
+        {% csrf_token %}
+        <label>A value</label>
+        <input type="text" name="value1"">
+        <label>B value</label>
+        <input type="text" name="value2">
+        <select name="opt">
+            <option value="add">Add</option>
+            <option value="sub">Sub</option>
+        </select>
+        
+        <input type="submit" name="sub" value="calculate">
+        <p>Answer {{ans}}</p>
+    </form>
+{% endblock %}

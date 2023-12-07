@@ -1,0 +1,16 @@
+{% include 'AdminHome.html' %}
+<h2>Add Subject</h2>
+
+<form action="AddSub" method="get">
+    {%csrf_token%}
+    <table cellspacing="25px" cellpadding="25px">
+    {{f.as_table}}
+
+    <tr>
+        <td><input type="reset" name="sub" class="btn btn-danger"></td>
+        <td><input type="submit" name="sub" value='Register' class="btn btn-success"></td>
+       </tr>
+    
+</table>
+</fieldset>
+</form>

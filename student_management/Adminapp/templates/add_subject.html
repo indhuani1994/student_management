@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Subject</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    <h1>Add Subject</h1>
+    <form method="post" action="{{ url_for('add_subject') }}">
+        <table class="table" >
+            {{ form.hidden_tag() }}
+            <tr>
+                <th>{{ form.s_name.label }}</th>
+                <td>{{ form.s_name(size=32) }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ form.submit() }}</td>
+            </tr>
+        </table>
+        
+        
+         
+        
+        
+    </form>
+</body>
+</html>

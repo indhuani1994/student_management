@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Schedule</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    {% include 'M.html' %}
+
+    <h1>View Schedule Records</h1>
+
+    <table class="table" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Schedule ID</th>
+                <th>Staff </th>
+                <th>Subject </th>
+                <th> Status</th>
+                <th> Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in schedule_records %}
+                <tr>
+                    <td>{{ schedule.schedule_id }}</td>
+                    <td>{{ schedule.staff.staff_name }}</td>
+                    <td>{{ schedule.subject.s_name }}</td>
+                    <td>{{ schedule.schedule_status }}</td>
+                    <td><a href="{{ url_for('delete_schedule', schedule_id=schedule.schedule_id) }}">Delete</a></td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

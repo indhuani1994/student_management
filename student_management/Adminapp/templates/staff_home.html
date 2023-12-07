@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Home</title>
+</head>
+<body>
+    {% include 'StaffLink.html' %}
+    <div class="main">
+    {% include 'M.html' %}
+
+    <center><h1>Hai <i>{{ session['uname'] }}</i> Welcome to the Student Management </h1></center>
+    
+    <!-- <h3>Welcome, {{ session['uname'] }}!</h3>
+    <h3>Your Staff ID: {{ session['uid'] }}</h3> -->
+
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Subject</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    {% include 'M.html' %}
+    <div class="main">
+    <h1>Delete Subject</h1>
+    <p>Are you sure you want to delete the subject '{{ subject.s_name }}'?</p>
+    <form method="post">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+    <table class="table" class="table table-striped">
+        <tr>
+            <th><input type="submit" value="Delete"></th>
+            <th><a href="{{ url_for('view_subject') }}">Cancel</a></th>
+                
+        </tr>
+    </table>
+    
+        
+    </form>
+</body>
+</html>

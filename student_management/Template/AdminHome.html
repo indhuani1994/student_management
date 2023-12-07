@@ -1,0 +1,10 @@
+{% extends 'Master.html' %}
+{% load static %}
+{% block title%}HOME PAGE{% endblock %}
+{% block content%}
+    
+    <h1>WElcome to Admin Home</h1>
+   
+    <a href=" {% url 'AddSubject' %} ">Add Subject</a>
+    <a href=" {% url 'AddStaff' %} ">Add Staff </a>
+{% endblock %}

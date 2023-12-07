@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Staff</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    <h1>Add Staff</h1>
+    <form method="post" action="{{ url_for('add_staff') }}">
+        {{ form.csrf_token }}
+        <table class="table" class="table table-striped">
+            <tr>
+                <th>{{ form.staff_name.label }}</th>
+                <td>{{ form.staff_name(size=32) }}</td>
+            </tr>
+            <tr>
+                <th>{{ form.mobile.label }}</th>
+                <td>{{ form.mobile(size=32) }}</td>
+            </tr>
+            <tr>
+                <th>{{ form.mail.label }}</th>
+                <td>{{ form.mail(size=32) }}</td>
+            </tr>
+            
+            <tr>
+                <th>{{ form.experience.label }}</th>
+                <td>{{ form.experience(size=32) }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{ form.submit() }}
+                </td>
+            </tr>
+        </table>
+         
+        
+    </form>
+</body>
+</html>

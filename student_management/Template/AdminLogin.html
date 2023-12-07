@@ -1,0 +1,25 @@
+{% extends 'Master.html'%}
+{% block title%}Admin Login{% endblock %}
+{% block content%}
+{% include 'CommonLink.html' %}
+<h1>Admin Login</h1>
+
+<form action="Admin_Login_data" method="post">
+    {% csrf_token %}
+    <table cellspacing="25px" cellpadding="25px">
+        <tr>
+            <td>User Name</td>
+            <td><input type="password " name="uname" required placeholder="Enter Your Name"></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="pw" required placeholder="Enter Your Mobile Number"></td>
+        </tr>
+        <tr>
+            <td><input type="reset" name="sub" class="btn btn-danger"></td>
+            <td><input type="submit" name="sub" value='Login' class="btn btn-success"></td>
+           </tr>
+        
+    </table>
+</form>
+    {% endblock %}

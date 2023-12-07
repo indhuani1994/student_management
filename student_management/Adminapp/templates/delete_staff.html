@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Staff</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    <h1>Delete Staff Record</h1>
+
+    <p>Are you sure you want to delete the staff record for {{ staff.staff_name }}?</p>
+
+    <form method="post" action="{{ url_for('delete_staff', staff_id=staff.id) }}">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <table class="table" class="table table-striped">
+                <tr>
+                    <th><input type="submit" value="Delete"></th>
+                    <th><a href="{{ url_for('view_staff') }}">Cancel</a></th>
+                </tr>
+        </table>
+        
+    </form>
+
+    
+</body>
+</html>

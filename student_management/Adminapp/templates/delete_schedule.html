@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Schedule</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    {% include 'M.html' %}
+    <div class="main">
+        
+
+    <h1>Delete Schedule</h1>
+
+    <p>Are you sure you want to delete the following schedule?</p>
+
+    <table class="table" class="table table-striped">
+        <tr>
+            <th>Schedule ID</th>
+            <td>{{ schedule.schedule_id }}</td>
+        </tr>
+        <tr>
+            <th>Staff</th>
+            <td>{{ schedule.staff.staff_name }}</td>
+        </tr>
+        <tr>
+            <th>Subject</th>
+            <td>{{ schedule.subject.s_name }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ schedule.schedule_status }}</td>
+        </tr>
+    </table>
+
+    <form method="post" action="{{ url_for('delete_schedule', schedule_id=schedule.schedule_id) }}">
+        {{ form.csrf_token }}
+        {{ form.submit(class="btn btn-danger") }}
+    </form>
+
+</body>
+</html>

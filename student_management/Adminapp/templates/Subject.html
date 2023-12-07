@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Subject</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    {% include 'M.html' %}
+    <h1>View Subject </h1>
+    {% if staff_records %}
+    <table class="table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in staff_records %}
+                    <tr>
+                        <td>{{ record.subid }}</td>
+                        <td>{{ record.s_name }}</td>
+                        <td>{{ record.sub_status }}</td>
+                        
+                        <td><a href="{{ url_for('edit_subject', subject_id=record.subid) }}">Edit</a></td>
+                        <td><a href="{{ url_for('delete_subject', subject_id=record.subid) }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No Subject records found.</p>
+    {% endif %}
+</body>
+</html>

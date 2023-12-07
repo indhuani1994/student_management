@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Subject</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    {% include 'M.html' %}
+    <h1>Edit Subject</h1>
+    <form method="post">
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <table class="table" class="table table-striped">
+            <tr>
+                <th>{{ form.s_name.label }}</th>
+                <td>{{ form.s_name(size=32) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.submit() }}</td>
+            </tr>
+        </table>
+        
+         
+        <br>
+        
+    </form>
+</div>
+</body>
+</html>

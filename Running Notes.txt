@@ -1,0 +1,20 @@
+Software Installation
+----------------------
+Install python
+Install Xampp control panel
+Install requirements Tools (refer requirement.txt)
+
+Import DB
+---------
+Create new Database named as staff_management
+Import Table in Database
+
+Run the Application
+--------------------
+Open command prompt from your folder where app.py represents
+cmd: python app.py
+
+Admin Login
+--------------
+Username: admin
+Password: 1234

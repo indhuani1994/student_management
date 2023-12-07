@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <!-- <style>
+        body{
+            background-image: url("{% static 'IMAGES/fb.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style> -->
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body>
+    {% block content%}
+    {% endblock %}
+</body>
+</html>

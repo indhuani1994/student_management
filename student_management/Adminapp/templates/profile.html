@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Profile</title>
+</head>
+<body>
+    
+    {% include 'StaffLink.html' %}
+    <div class="main">
+        {% include 'M.html' %}
+
+    <h1>Staff Profile</h1>
+    <p>Welcome, {{ staff.staff_name }}!</p>
+    <p>Your Staff ID: {{ staff.id }}</p>
+
+    <!-- Display other staff details -->
+    <p>Mobile: {{ staff.mobile }}</p>
+    <p>Email: {{ staff.mail }}</p>
+    <p>Experience: {{ staff.experience }} </p>
+    <!-- Add more details as needed -->
+
+</body>
+</html>

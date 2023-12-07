@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Schedule</title>
+</head>
+<body>
+    
+    {% include 'StaffLink.html' %}
+    <div class="main">
+        {% include 'M.html' %}
+    <h1>Your Schedule</h1>
+    
+    {% if schedule_records %}
+    <table class="table" class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Schedule ID</th>
+                    <th>Subject Name</th>
+                    <!-- Add other columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in schedule_records %}
+                    <tr>
+                        <td>{{ record.schedule_id }}</td>
+                        <td>{{ record.subject.s_name }}</td>
+                        <!-- Access other columns as needed -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No schedule available.</p>
+    {% endif %}
+</body>
+</html>

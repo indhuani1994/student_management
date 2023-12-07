@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Schedule</title>
+</head>
+<body>
+    {% include 'AdminLink.html' %}
+    <div class="main">
+    <h1>Add Schedule</h1>
+
+    {% include 'M.html' %}
+
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <label for="staff_id">Staff ID:</label>
+        {{ form.staff_id(class="form-control", placeholder="Enter Staff ID", required="required") }}
+        <br>
+        <label for="subject_id">Subject ID:</label>
+        {{ form.subject_id(class="form-control", placeholder="Enter Subject ID", required="required") }}
+        <br>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</body>
+</html>
